@@ -7,11 +7,11 @@ $user_name = $_POST['user_name'];
 $password = $_POST['password'];
 if($user_name == null){
     echo "<script>alert('UserName cannot leave blank!');
-        location.href='/php_lessons/login.php';</script>";
+        location.href='../login.php';</script>";
 }
 if($password == null){
     echo "<script>alert('Password cannot leave blank!');
-        location.href='/php_lessons/login.php';</script>";
+        location.href='../login.php';</script>";
 }
 
 $sql = "SELECT * FROM user WHERE uid=? and upwd=?";
@@ -22,12 +22,11 @@ if(mysqli_stmt_prepare($stmt,$sql)){
     $result = mysqli_stmt_get_result($stmt);
     if(mysqli_num_rows($result) == 0){
         echo "<script>alert('Invalid username or password, try again!');
-            location.href='/php_lessons/login.php';</script>";
+            location.href='../index.html';</script>";
     }
     else{
         $_SESSION['username'] = $user_name;
-        echo "<script>alert('Successfully logged in!');
-            location.href='../index.html';</script>";
+        echo "<script>location.href='../main_page/index.html';</script>";
     }
 }
 ?>
