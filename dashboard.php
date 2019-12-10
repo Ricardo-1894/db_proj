@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include 'include/index_process.php';
@@ -149,10 +148,10 @@ include 'include/index_process.php';
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-comments"></i>
                 </div>
-                <div class="mr-5">26 New Messages!</div>
+                <div class="mr-5"><?php include 'include/dashboard_process.php'; friends_messages_num(); ?></div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
+                <span class="float-left">View friends' feed</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
@@ -168,7 +167,7 @@ include 'include/index_process.php';
                 <div class="mr-5">11 New Tasks!</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
+                <span class="float-left">View neighbors' feed</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
@@ -184,7 +183,7 @@ include 'include/index_process.php';
                 <div class="mr-5">123 New Orders!</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
+                <span class="float-left">View blocks' feed</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
@@ -200,7 +199,7 @@ include 'include/index_process.php';
                 <div class="mr-5">13 New Tickets!</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
+                <span class="float-left">View hoods' feed</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
