@@ -9,11 +9,11 @@ $current_login_time = date("Y-m-d H:i:s");
 
 if($user_name == null){
     echo "<script>alert('UserName cannot leave blank!');
-        location.href='../index.html';</script>";
+        location.href='../index.php';</script>";
 }
 if($password == null){
     echo "<script>alert('Password cannot leave blank!');
-        location.href='../index.html';</script>";
+        location.href='../index.php';</script>";
 }
 
 $sql = "SELECT * FROM user WHERE uid=? and upwd=?";
@@ -25,12 +25,12 @@ if(mysqli_stmt_prepare($stmt,$sql)){
     if(mysqli_num_rows($result) == 0){
         echo "<script>
                 alert('Invalid username or password, try again!');
-                location.href='../index.html';
+                location.href='../index.php';
               </script>";
     }
     else{
         $_SESSION['username'] = $user_name;
-        echo "<script>location.href='../dashboard.html';</script>";
+        echo "<script>location.href='../dashboard.php';</script>";
     }
 }
 ?>
