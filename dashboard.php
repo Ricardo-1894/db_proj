@@ -716,13 +716,13 @@ include 'include/index_process.php';
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->
-      <footer class="sticky-footer">
+      <!-- <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright © Your Website 2019</span>
           </div>
         </div>
-      </footer>
+      </footer> -->
 
     </div>
     <!-- /.content-wrapper -->
