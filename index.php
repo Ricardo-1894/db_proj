@@ -1,8 +1,3 @@
-<?php
-session_start();
-include 'include/index_process.php';
-?>
-
 <!DOCTYPE php>
 <php lang="en">
 
