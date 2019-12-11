@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-include_once "dbh.inc.php";
+include "dbh.inc.php";
+$conn = connect_database();
 
 $user_name = $_POST['user_name'];
 $password = $_POST['password'];
@@ -23,12 +24,14 @@ if(mysqli_stmt_prepare($stmt,$sql)){
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     if(mysqli_num_rows($result) == 0){
+        disconnect($conn);
         echo "<script>
                 alert('Invalid username or password, try again!');
                 location.href='../index.php';
               </script>";
     }
     else{
+        disconnect($conn);
         $_SESSION['username'] = $user_name;
         echo "<script>location.href='../dashboard.php';</script>";
     }

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'include/index_process.php';
+include 'include/dashboard_process.php'
 ?>
 
 <!DOCTYPE php>
@@ -148,7 +149,7 @@ include 'include/index_process.php';
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-comments"></i>
                 </div>
-                <div class="mr-5"><?php include 'include/dashboard_process.php'; friends_messages_num(); ?></div>
+                <div class="mr-5"><?php unread_f_msg_count(); ?></div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">View friends' feed</span>
@@ -164,7 +165,7 @@ include 'include/index_process.php';
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-list"></i>
                 </div>
-                <div class="mr-5">11 New Tasks!</div>
+                <div class="mr-5"><?php unread_n_msg_count(); ?></div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">View neighbors' feed</span>
@@ -180,7 +181,7 @@ include 'include/index_process.php';
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-shopping-cart"></i>
                 </div>
-                <div class="mr-5">123 New Orders!</div>
+                <div class="mr-5"><?php unread_b_msg_count(); ?></div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">View blocks' feed</span>
@@ -196,7 +197,7 @@ include 'include/index_process.php';
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-life-ring"></i>
                 </div>
-                <div class="mr-5">13 New Tickets!</div>
+                <div class="mr-5"><?php unread_h_msg_count(); ?></div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">View hoods' feed</span>
