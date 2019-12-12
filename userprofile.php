@@ -81,7 +81,7 @@ include 'include/dashboard_process.php'
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" href="userprofile.php">My Profile</a>
           <a class="dropdown-item" href="#">Activity Log</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
@@ -142,21 +142,21 @@ include 'include/dashboard_process.php'
         <h1>My Profile</h1>
         <hr>
 
-        <form class="foo">
+        <form class="foo" id = "form">
           <div class="form-group">
             <label for="nicknameinput">Nick Name</label>
             <input type="text" class="form-control" id="nicknameinput" name = "unickname" value = "">
           </div>
 
-<!--          <div class="form-group">-->
-<!--            <label for="self_introduction">Self Introduction</label>-->
-<!--            <textarea class="form-control" id="self_introduction" rows="3" placeholder="Tell about yourself" name = "self_introduction"></textarea>-->
-<!--          </div>-->
+          <div class="form-group">
+            <label for="self_introduction">Self Introduction</label>
+            <textarea class="form-control" id="self_introduction" rows="3" name = "self_introduction" value = ""></textarea>
+          </div>
 
-<!--          <div class="form-group">-->
-<!--            <label for="family_introduction">Self Introduction</label>-->
-<!--            <textarea class="form-control" id="family_introduction" rows="4" placeholder="Tell about your family" name = "family_introduction"></textarea>-->
-<!--          </div>-->
+          <div class="form-group">
+            <label for="family_introduction">Self Introduction</label>
+            <textarea class="form-control" id="family_introduction" rows="4" name = "family_introduction" value = ""></textarea>
+          </div>
           <center><button type="submit" class="btn btn-primary btn-lg">Change Profile</button></center>
         </form>
 
@@ -231,33 +231,7 @@ include 'include/dashboard_process.php'
   <script src="js/sb-admin.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-  <script language="javascript">
-      jQuery.noConflict();
-      (
-          function($) {
-              var url = {
-                  fetch_profile: 'include/userprofile_process.php?action=fetch_previous_user_profile',
-                  update_profile: 'include/userprofile_process.php?action=update_profile'
-              };
-
-              $(document).ready(function(){
-                  $.ajax({
-                      url: url.fetch_profile,
-                      method: 'GET',
-                      // dataType: 'json'
-                  }).done(function(data){
-                      alert("success");
-                      console.log(data);
-                      document.getElementById("nicknameinput").value = data['unickname'];
-                  }).fail(function(){
-                      alert("fail");
-                  });
-              });
-              // $(document).on()
-          }
-      )(jQuery);
-  </script>
-
+  <script src="js/userprofile.js"></script>
 </body>
 
 </html>

@@ -3,6 +3,7 @@ include 'dbh.inc.php';
 
 $total = 0;
 $conn = connect_database();
+
 $user_id = $_SESSION['username'];
 
 $sql = "
