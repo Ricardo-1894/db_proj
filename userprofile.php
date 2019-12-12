@@ -1,3 +1,9 @@
+<?php
+session_start();
+include 'include/index_process.php';
+include 'include/dashboard_process.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Blank Page</title>
+  <title>Neighbor Web - UserProfile</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -136,21 +142,22 @@
         <h1>My Profile</h1>
         <hr>
 
-        <form>
+        <form class="foo">
           <div class="form-group">
             <label for="nicknameinput">Nick Name</label>
-            <input type="text" class="form-control" id="nicknameinput" placeholder="Your nick name" name = "unickname">
+            <input type="text" class="form-control" id="nicknameinput" name = "unickname" value = "">
           </div>
 
-          <div class="form-group">
-            <label for="self_introduction">Self Introduction</label>
-            <textarea class="form-control" id="self_introduction" rows="3" placeholder="Tell about yourself" name = "self_introduction"></textarea>
-          </div>
+<!--          <div class="form-group">-->
+<!--            <label for="self_introduction">Self Introduction</label>-->
+<!--            <textarea class="form-control" id="self_introduction" rows="3" placeholder="Tell about yourself" name = "self_introduction"></textarea>-->
+<!--          </div>-->
 
-          <div class="form-group">
-            <label for="family_introduction">Self Introduction</label>
-            <textarea class="form-control" id="family_introduction" rows="4" placeholder="Tell about your family" name = "family_introduction"></textarea>
-          </div>
+<!--          <div class="form-group">-->
+<!--            <label for="family_introduction">Self Introduction</label>-->
+<!--            <textarea class="form-control" id="family_introduction" rows="4" placeholder="Tell about your family" name = "family_introduction"></textarea>-->
+<!--          </div>-->
+          <center><button type="submit" class="btn btn-primary btn-lg">Change Profile</button></center>
         </form>
 
         <form>
@@ -207,7 +214,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="index.php">Logout</a>
+          <a class="btn btn-primary" href="include/logout_process.php">Log Out!</a>
         </div>
       </div>
     </div>
@@ -222,6 +229,34 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <script language="javascript">
+      jQuery.noConflict();
+      (
+          function($) {
+              var url = {
+                  fetch_profile: 'include/userprofile_process.php?action=fetch_previous_user_profile',
+                  update_profile: 'include/userprofile_process.php?action=update_profile'
+              };
+
+              $(document).ready(function(){
+                  $.ajax({
+                      url: url.fetch_profile,
+                      method: 'GET',
+                      // dataType: 'json'
+                  }).done(function(data){
+                      alert("success");
+                      console.log(data);
+                      document.getElementById("nicknameinput").value = data['unickname'];
+                  }).fail(function(){
+                      alert("fail");
+                  });
+              });
+              // $(document).on()
+          }
+      )(jQuery);
+  </script>
 
 </body>
 
