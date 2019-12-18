@@ -154,7 +154,7 @@ include 'include/dashboard_process.php'
           </div>
 
           <div class="form-group">
-            <label for="family_introduction">Self Introduction</label>
+            <label for="family_introduction">Family Introduction</label>
             <textarea class="form-control" id="family_introduction" rows="4" name = "family_introduction" value = ""></textarea>
           </div>
           <center><button type="submit" class="btn btn-primary btn-lg">Change Profile</button></center>

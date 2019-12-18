@@ -39,16 +39,50 @@ include 'include/dashboard_process.php'
     </button>
 
     <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" id = "search_form">
+        <select class="form-control" id="search_select" name="search_type" required>
+            <option value="Thread">Thread</option>
+            <option value="Friend">Friend</option>
+            <option value="Block">Block</option>
+        </select>
+        <input type="text" class="form-control" id = 'search_input' placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+        <button type = 'submit' class="btn btn-primary" type="button">
             <i class="fas fa-search"></i>
-          </button>
-        </div>
+        </button>
       </div>
     </form>
+
+<!--      <form>-->
+<!--          <div class="form-row align-items-center">-->
+<!--              <div class="col-auto my-1">-->
+<!--                  <label class="mr-sm-2" for="inlineFormCustomSelect"></label>-->
+<!--                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">-->
+<!--                      <option selected>Choose...</option>-->
+<!--                      <option value="1">One</option>-->
+<!--                      <option value="2">Two</option>-->
+<!--                      <option value="3">Three</option>-->
+<!--                  </select>-->
+<!--              </div>-->
+<!--              <div class="col-auto my-1">-->
+<!--                  <div class="custom-control custom-checkbox mr-sm-2">-->
+<!--                      <input type="checkbox" class="custom-control-input" id="customControlAutosizing">-->
+<!--                      <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--              <div class="col-auto my-1">-->
+<!--                  <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--      </form>-->
+
+<!--      <form class="form-inline mr-auto" id="searchForm">-->
+<!--          <select class="form-control" id="searchSelect" name="searchType" required>-->
+<!--              <option value="msg">By Content</option>-->
+<!--              <option value="location">By Location</option>-->
+<!--          </select>-->
+<!--          <input class="form-control my-2 mr-sm-2 search-input" type="search" placeholder="Search location / message" aria-label="Search" name="searchText" required>-->
+<!--          <button class="btn btn-primary my-2 my-sm-0" type="submit" id="search">Search</button>-->
+<!--      </form>-->
 
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
@@ -806,6 +840,7 @@ include 'include/dashboard_process.php'
   <!-- Demo scripts for this page-->
   <script src="js/demo/datatables-demo.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/search.js"></script>
 
 </body>
 
