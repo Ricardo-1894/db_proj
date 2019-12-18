@@ -3,9 +3,6 @@ include 'dbh.inc.php';
 session_start();
 $conn = connect_database();
 
-//$user_id = $_POST['username'];
-//$keyword = "%".$_POST['keyword']."%";
-
 $user_id = $_SESSION['username'];
 $keyword = "%".$_POST['search_text']."%";
 
@@ -44,12 +41,17 @@ function search_block(){
 
 function search_friend(){
     global $conn, $user_id, $keyword;
-    $sql = "SELECT unickname, textbody, timestamp, msg_id
-            FROM user NATURAL JOIN thread_users NATURAL JOIN thread NATURAL JOIN thread_msgs NATURAL JOIN msg, user_profile
-            WHERE user.uid = ? AND thread_type = 0 AND textbody LIKE ? AND user_profile.uid = author";
+    $sql = "SELECT unickname, block_name
+            FROM user AS u1, friend_relation, user AS u2, user_profile, block
+            WHERE u1.uid = ? AND u1.uid = uid1 AND u2.uid = uid2 AND user_profile.uid = u2.uid AND unickname LIKE ? AND block.bid = u2.bid
+            UNION
+            SELECT unickname, block_name
+            FROM user AS u1, friend_relation, user AS u2, user_profile, block
+            WHERE u1.uid = ? AND u1.uid = uid2 AND u2.uid = uid1 AND user_profile.uid = u2.uid AND unickname LIKE ? AND block.bid = u2.bid
+            ";
     $stmt = mysqli_stmt_init($conn);
     if(mysqli_stmt_prepare($stmt,$sql)){
-    mysqli_stmt_bind_param($stmt, "ss", $user_id);
+    mysqli_stmt_bind_param($stmt, "ssss", $user_id, $keyword, $user_id, $keyword);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     }
@@ -67,7 +69,7 @@ function search_thread(){
             WHERE uid = ? and msg_id = last_msg_id and thread_name like ?";
     $stmt = mysqli_stmt_init($conn);
     if(mysqli_stmt_prepare($stmt,$sql)){
-    mysqli_stmt_bind_param($stmt, "ss", $user_id);
+    mysqli_stmt_bind_param($stmt, "ss", $user_id, $keyword);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     }
