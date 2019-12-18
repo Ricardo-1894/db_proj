@@ -10,13 +10,13 @@ function fetch_neighbor(){
     global $conn, $user_id;
     $sql = "SELECT uid, unickname, block_name 
             from user natural join user_profile natural join block natural join hood 
-            where uid != 123 and hid = (
+            where uid != ? and hid = (
                 select hid 
                 from user as u1 natural join block natural join hood 
-                where u1.uid = 123)";
+                where u1.uid = ?)";
     $stmt = mysqli_stmt_init($conn);
     if(mysqli_stmt_prepare($stmt,$sql)){
-        mysqli_stmt_bind_param($stmt, "s", $user_id);
+        mysqli_stmt_bind_param($stmt, "ss", $user_id, $user_id);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
     }
