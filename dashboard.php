@@ -157,9 +157,9 @@ include 'include/dashboard_process.php'
           <span>Charts</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="tables.php">
+        <a class="nav-link" href="neighbors.php">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+          <span>Neighbors</span></a>
       </li>
     </ul>
 
@@ -289,7 +289,7 @@ include 'include/dashboard_process.php'
           src="https://maps.googleapis.com/maps/api/js?key=my_google_maps_api_key&callback=initMap">
         </script>
         <!-- DataTables Example -->
-        <div class="card mb-3">
+        <div class="card mb-3" style="visibility:hidden">
           <div class="card-header">
             <i class="fas fa-table"></i>
             Data Table Example</div>
@@ -784,13 +784,13 @@ include 'include/dashboard_process.php'
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->
-      <!-- <footer class="sticky-footer">
+       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
+            <span>Copyright © Neighbor Web 2019</span>
           </div>
         </div>
-      </footer> -->
+      </footer>
 
     </div>
     <!-- /.content-wrapper -->

@@ -51,9 +51,9 @@ function search_friend(){
             ";
     $stmt = mysqli_stmt_init($conn);
     if(mysqli_stmt_prepare($stmt,$sql)){
-    mysqli_stmt_bind_param($stmt, "ssss", $user_id, $keyword, $user_id, $keyword);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+        mysqli_stmt_bind_param($stmt, "ssss", $user_id, $keyword, $user_id, $keyword);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
     }
     $dbdata = array();
     while ( $row = $result->fetch_assoc())  {
@@ -69,9 +69,9 @@ function search_thread(){
             WHERE uid = ? and msg_id = last_msg_id and thread_name like ?";
     $stmt = mysqli_stmt_init($conn);
     if(mysqli_stmt_prepare($stmt,$sql)){
-    mysqli_stmt_bind_param($stmt, "ss", $user_id, $keyword);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+        mysqli_stmt_bind_param($stmt, "ss", $user_id, $keyword);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
     }
     $dbdata = array();
     while ( $row = $result->fetch_assoc())  {
