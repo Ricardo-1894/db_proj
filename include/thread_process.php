@@ -75,7 +75,7 @@ function fetch_hood_thread(){
     global $conn, $user_id;
     $sql = "SELECT thread_id, thread_name, textbody, timestamp
             FROM user natural join thread_users natural join thread natural join thread_msgs natural join msg, user_profile
-            WHERE user.uid=123 and thread_type=3 and user_profile.uid=author";
+            WHERE user.uid=? and thread_type=3 and user_profile.uid=author";
     $stmt = mysqli_stmt_init($conn);
     if(mysqli_stmt_prepare($stmt,$sql)){
         mysqli_stmt_bind_param($stmt, "s", $user_id);
