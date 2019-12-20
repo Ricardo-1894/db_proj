@@ -39,6 +39,19 @@ function search_block(){
     echo $db_encode;
 }
 
+function add_block(){
+    global $conn, $user_id;
+    $add_bid = $_POST['add_bid'];
+    
+    $sql = "INSERT INTO `block_application` VALUES (?,?, 0)";
+    $stmt = mysqli_stmt_init($conn);
+    if(mysqli_stmt_prepare($stmt,$sql)){
+        mysqli_stmt_bind_param($stmt, "ss", $user_id, $add_bid);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+    }
+}
+
 function search_friend(){
     global $conn, $user_id, $keyword;
     $sql = "SELECT unickname, block_name
