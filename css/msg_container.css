@@ -1,0 +1,226 @@
+body {
+    background: #F4F4F7;
+}
+.main-container {
+    margin-top: 15px;
+}
+
+/*.col-7 {*/
+/*    background: url(../common/img/no-message.jpg);*/
+/*    background-position: center 100px;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: 20%;*/
+/*}*/
+
+.btn-send-msg {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 3px;
+    width: 100%;
+    height: 70px;
+    padding: 15px;
+    background: #FFFFFF;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px
+}
+
+.avatar img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.post-text {
+    padding: 8px 0;
+    text-align: left;
+    color: #676E7A;
+}
+
+.btn-send-msg.focus, .btn-send-msg:focus {
+    box-shadow: none;
+}
+
+.msg-body-row {
+    padding: 0 15px;
+}
+
+.hide {
+    display: none;
+}
+
+.message-container {
+    margin: 10px 0 0 0;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 3px;
+    width: 100%;
+    padding: 15px;
+    background: #FFFFFF;
+}
+.message-container .msg-item {
+    margin-bottom: 15px;
+}
+.message-container .msg-sender {
+    height: 40px;
+    vertical-align: middle;
+}
+
+.sender-info {
+    line-height: 40px;
+}
+
+.message-container .msg-item.msg-time {
+    font-size: 13px;
+    color: rgb(103, 110, 122);
+}
+.message-container .msg-item.msg-buttons .btn {
+    color: #48bf84;
+    padding-left: 0;
+}
+
+.message-container .msg-item.msg-buttons .btn.focus,
+.message-container .msg-item.msg-buttons .btn:focus {
+    box-shadow: none;
+}
+
+.reply-box .reply-content {
+    padding: 0 20px 0 0;
+}
+.reply-info {
+    padding: 0 15px;
+    border: 1px solid rgb(239, 241, 243);
+    border-radius: 5px;
+    background: #F9F9FA;
+}
+
+.sender-name {
+    color: #333333;
+}
+.reply-input {
+    padding: 0 20px 0 0;
+    /*text-align: right;*/
+}
+
+.reply-btn {
+    display: block;
+    margin-top: 10px;
+}
+
+.msg-buttons {
+    height: 40px;
+}
+
+.profile-card {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.profile-card .card-header {
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+#headProfile .card-header {
+    height: 116px;
+    background-image: url(../common/img/profile_bg.JPG);
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#headProfile .profile-avatar {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: 20px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+#headProfile .profile-avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.map-container {
+    /*width: 100%;*/
+    height: 300px;
+    /*background-color: pink;*/
+}
+
+#searchForm .form-control {
+    margin-left: 10px;
+}
+
+span.noti-num {
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+    color: #ffffff;
+    float: right;
+    background: red;
+    text-align: center;
+    margin-top: -10px;
+    margin-left: -5px;
+    font-size: 10px;
+}
+
+.message-container .msg-item.noti {
+    margin-bottom: 0px;
+}
+
+.now-in-block {
+    font-size: 24px;
+}
+
+#lstBlock {
+    margin-top: 30px;
+}
+#lstBlock h3 {
+    margin-left: 10px;
+}
+.hname {
+    font-weight: bold;
+}
+
+.block-container {
+    margin-top: 10px;
+}
+
+#Recommendation {
+    margin-top: 10px;
+}
+
+#Recommendation_n {
+    margin-top: 10px;
+}
+
+.profile-card {
+    background: #FFFFFF!important;
+}
+
+.submit-intro {
+    margin-top: 15px;
+}
+
+#aboutMe.form-control:disabled, #aboutMe.form-control[readonly], #aboutFamily.form-control:disabled, #aboutFamily.form-control[readonly]{
+    background-color: #FFFFFF;
+    border: 0;
+}
+.edit-intro {
+    color: #48bf84!important;
+}
+
+#uploadAvatar {
+    width: 98px;
+    height: 98px;
+    margin-top: -98px;
+    margin-left: 20px;
+}
+
+.pointer {
+    cursor: pointer!important;
+}

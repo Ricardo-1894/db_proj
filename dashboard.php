@@ -32,7 +32,7 @@ include 'include/dashboard_process.php'
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.php">Start</a>
+    <a class="navbar-brand mr-1" href="dashboard.php">Start</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -98,7 +98,7 @@ include 'include/dashboard_process.php'
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="dashboard.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
@@ -255,9 +255,11 @@ include 'include/dashboard_process.php'
           }
         </script>
         <script async defer
+
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYKmQLLzSPnRViDDC3iimnrOcQt9kruzs&callback=initMap">
         </script>
 
+<!--          AIzaSyBYKmQLLzSPnRViDDC3iimnrOcQt9kruzs-->
       </div>
       <!-- /.container-fluid -->
 
