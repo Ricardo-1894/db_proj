@@ -52,38 +52,6 @@ include 'include/dashboard_process.php'
       </div>
     </form>
 
-<!--      <form>-->
-<!--          <div class="form-row align-items-center">-->
-<!--              <div class="col-auto my-1">-->
-<!--                  <label class="mr-sm-2" for="inlineFormCustomSelect"></label>-->
-<!--                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">-->
-<!--                      <option selected>Choose...</option>-->
-<!--                      <option value="1">One</option>-->
-<!--                      <option value="2">Two</option>-->
-<!--                      <option value="3">Three</option>-->
-<!--                  </select>-->
-<!--              </div>-->
-<!--              <div class="col-auto my-1">-->
-<!--                  <div class="custom-control custom-checkbox mr-sm-2">-->
-<!--                      <input type="checkbox" class="custom-control-input" id="customControlAutosizing">-->
-<!--                      <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>-->
-<!--                  </div>-->
-<!--              </div>-->
-<!--              <div class="col-auto my-1">-->
-<!--                  <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--              </div>-->
-<!--          </div>-->
-<!--      </form>-->
-
-<!--      <form class="form-inline mr-auto" id="searchForm">-->
-<!--          <select class="form-control" id="searchSelect" name="searchType" required>-->
-<!--              <option value="msg">By Content</option>-->
-<!--              <option value="location">By Location</option>-->
-<!--          </select>-->
-<!--          <input class="form-control my-2 mr-sm-2 search-input" type="search" placeholder="Search location / message" aria-label="Search" name="searchText" required>-->
-<!--          <button class="btn btn-primary my-2 my-sm-0" type="submit" id="search">Search</button>-->
-<!--      </form>-->
-
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
       <li class="nav-item dropdown no-arrow mx-1">
@@ -135,22 +103,23 @@ include 'include/dashboard_process.php'
           <span>Dashboard</span>
         </a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.php">Login</a>
-          <a class="dropdown-item" href="register.php">Register</a>
-          <a class="dropdown-item" href="forgot-password.php">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.php">404 Page</a>
-          <a class="dropdown-item" href="blank.php">Blank Page</a>
-        </div>
-      </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Pages</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <h6 class="dropdown-header">All Threads:</h6>
+                <a class="dropdown-item" href="friend_threads.php">Friends</a>
+                <a class="dropdown-item" href="#">Neighbors</a>
+                <a class="dropdown-item" href="#">Block</a>
+                <a class="dropdown-item" href="#">Hood</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Other Messages</h6>
+                <a class="dropdown-item" href="404.html">Friends Apply</a>
+                <a class="dropdown-item active" href="404.html">Block Apply</a>
+            </div>
+        </li>
       <li class="nav-item">
         <a class="nav-link" href="charts.php">
           <i class="fas fa-fw fa-chart-area"></i>
@@ -170,7 +139,7 @@ include 'include/dashboard_process.php'
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="dashboard.php">Dashboard</a>
           </li>
           <li class="breadcrumb-item active">Overview</li>
         </ol>
@@ -185,7 +154,7 @@ include 'include/dashboard_process.php'
                 </div>
                 <div class="mr-5"><?php unread_f_msg_count(); ?></div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
+              <a class="card-footer text-white clearfix small z-1" href="friend_threads.php">
                 <span class="float-left">View friends' feed</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
