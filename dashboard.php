@@ -347,7 +347,7 @@ include 'include/dashboard_process.php'
   <script src="js/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/dashboard.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/search.js"></script>
 

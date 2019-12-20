@@ -4,7 +4,15 @@ include 'dbh.inc.php';
 
 $conn = connect_database();
 $user_id = $_SESSION['username'];
-fetch_neighbor();
+
+if(isset($_POST['action']) && !empty($_POST['action'])) {
+    $action = $_POST['action'];
+
+    switch($action) {
+        case "fetch" : fetch_neighbor(); break;
+        default: break;
+    }
+}
 
 function fetch_neighbor(){
     global $conn, $user_id;
