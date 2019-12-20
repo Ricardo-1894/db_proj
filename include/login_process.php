@@ -17,23 +17,39 @@ if($password == null){
         location.href='../index.php';</script>";
 }
 
-$sql = "SELECT * FROM user WHERE uid=? and upwd=?";
+//$sql = "SELECT * FROM user WHERE uid=? and upwd=?";
+$sql = "SELECT * FROM user WHERE uid=?";
 $stmt = mysqli_stmt_init($conn);
 if(mysqli_stmt_prepare($stmt,$sql)){
-    mysqli_stmt_bind_param($stmt, "ss", $user_name, $password);
+    echo "?";
+    // mysqli_stmt_bind_param($stmt, "ss", $user_name, $password);
+    mysqli_stmt_bind_param($stmt, "s", $user_name);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
-    if(mysqli_num_rows($result) == 0){
+    $row = $result->fetch_assoc();
+    if(password_verify($password, $row['upwd'])){
+        disconnect($conn);
+        $_SESSION['username'] = $user_name;
+        echo "<script>location.href='../dashboard.php';</script>";
+    }
+    else{
         disconnect($conn);
         echo "<script>
                 alert('Invalid username or password, try again!');
                 location.href='../index.php';
               </script>";
     }
-    else{
-        disconnect($conn);
-        $_SESSION['username'] = $user_name;
-        echo "<script>location.href='../dashboard.php';</script>";
-    }
+    // if(mysqli_num_rows($result) == 0){
+    //     disconnect($conn);
+    //     echo "<script>
+    //             alert('Invalid username or password, try again!');
+    //             location.href='../index.php';
+    //           </script>";
+    // }
+    // else{
+    //     disconnect($conn);
+    //     $_SESSION['username'] = $user_name;
+    //     echo "<script>location.href='../dashboard.php';</script>";
+    // }
 }
 ?>

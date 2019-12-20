@@ -5,6 +5,7 @@ $user_id = $_POST['user_id'];
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
 
+
 if($user_id == null){
     disconnect($conn);
     echo "<script>alert('UserName cannot leave blank!');
@@ -40,13 +41,13 @@ if(mysqli_num_rows(check_exist_username()) == 1){
     echo "<script>alert('Phone Number already registered. Try log in?');
         location.href='../index.php';</script>";
 }
-
+$hash = password_hash($password, PASSWORD_DEFAULT);
 //create new user, insert into 'user' table, create new user_profile, insert into 'user_profile' table;
 $register_sql = "INSERT into user VALUES(?, ?, null, null)";
 $register_stmt = mysqli_stmt_init($conn);
 
 if(mysqli_stmt_prepare($register_stmt,$register_sql)){
-    mysqli_stmt_bind_param($register_stmt, "ss", $user_id, $password);
+    mysqli_stmt_bind_param($register_stmt, "ss", $user_id, $hash);
     mysqli_stmt_execute($register_stmt);
 
     if(mysqli_num_rows(check_exist_username()) == 1){
