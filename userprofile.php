@@ -154,7 +154,7 @@ include 'include/dashboard_process.php'
                   <i class="fas fa-camera-retro"></i>
               </div>
             </a>
-            <input type="file" id="uploadInput" name="avatar">
+            <input type="file" id="uploadInput" name="avatar" accept="image/*">
         </div>
 
         <form class="foo" id = "form">
