@@ -43,7 +43,7 @@ function add_block(){
     global $conn, $user_id;
     $add_bid = $_POST['add_bid'];
     
-    $sql = "INSERT INTO `block_application` VALUES (?,?, 0)";
+    $sql = "INSERT INTO `block_application` VALUES (?,?,0)";
     $stmt = mysqli_stmt_init($conn);
     if(mysqli_stmt_prepare($stmt,$sql)){
         mysqli_stmt_bind_param($stmt, "ss", $user_id, $add_bid);

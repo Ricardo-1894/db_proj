@@ -37,14 +37,14 @@ function fetch_neighbor(){
     echo $db_encode;
 }
 
-function add_friend(){
-    global $conn, $user_id, $add_id;
-    
-    $sql = "INSERT INTO `friend_relation` VALUES (?,?)";
-    $stmt = mysqli_stmt_init($conn);
-    if(mysqli_stmt_prepare($stmt,$sql)){
-        mysqli_stmt_bind_param($stmt, "ss", $add_id, $user_id);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-    }
-}
+//function add_friend(){
+//    global $conn, $user_id, $add_id;
+//
+//    $sql = "INSERT INTO `friend_relation` VALUES (?,?)";
+//    $stmt = mysqli_stmt_init($conn);
+//    if(mysqli_stmt_prepare($stmt,$sql)){
+//        mysqli_stmt_bind_param($stmt, "ss", $add_id, $user_id);
+//        mysqli_stmt_execute($stmt);
+//        $result = mysqli_stmt_get_result($stmt);
+//    }
+//}

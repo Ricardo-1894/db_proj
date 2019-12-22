@@ -1,3 +1,9 @@
+/**
+ * @author     (Haopeng Zhao <hz2151@nyu.edu>)
+ * jQuery for search bar
+ */
+
+
 jQuery.noConflict();
 (
     function($) {
@@ -28,7 +34,7 @@ jQuery.noConflict();
                     var table_row =  "                  <tr role=\"row\" class=\"odd\">\n" +
                         "                    <td class=\"sorting_1\">"+ json_data[i]["block_name"] +"</td>\n" +
                         "                    <td>"+json_data[i]["COUNT(uid)"]+"</td>\n" +
-                        "                    <td>apply link</td>\n" +
+                        "                    <td><button type=\"button\" class=\"btn btn-primary\">Join</button></td>\n" +
                         "                   </tr>";
                     table_total += table_row;
                 }
@@ -60,7 +66,7 @@ jQuery.noConflict();
                         "                    <td>"+json_data[i]["author"]+"</td>\n" +
                         "                    <td>"+json_data[i]["textbody"]+"</td>\n" +
                         "                    <td>"+json_data[i]["timestamp"]+"</td>\n" +
-                        "                    <td>view msg</td>\n" +
+                        "                    <td><button type=\"button\" class=\"btn btn-primary\">View Thread</button></td>\n" +
                         "                   </tr>";
                     table_total += table_row;
                 }
@@ -88,7 +94,7 @@ jQuery.noConflict();
                     var table_row = "                  <tr role=\"row\" class=\"odd\">\n" +
                         "                    <td class=\"sorting_1\">"+ json_data[i]["unickname"] +"</td>\n" +
                         "                    <td>"+json_data[i]["block_name"]+"</td>\n" +
-                        "                    <td>msg</td>\n" +
+                        "                    <td><button type=\"button\" class=\"btn btn-primary\">Send Msg</button></td>\n" +
                         "                   </tr>";
                     table_total += table_row;
                 }

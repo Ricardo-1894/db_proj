@@ -1,32 +1,39 @@
 <?php
+/**
+ * @author     (Haopeng Zhao <hz2151@nyu.edu>)
+ * front end for all friends' threads
+ */
 session_start();
 include 'include/index_process.php';
 include 'include/dashboard_process.php'
 ?>
 
-<!DOCTYPE php>
-<php lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Neighbor Web - Dashboard</title>
+    <title>Neighbor Web - Dashboard</title>
 
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-  <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-  <link href="css/msg_container.css" rel = "stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/msg_container.css" rel = "stylesheet">
+    <link href="css/fontawesome.css" rel="stylesheet">
+    <link href="css/brands.css" rel="stylesheet">
+    <link href="css/solid.css" rel="stylesheet">
 
 </head>
 
@@ -148,8 +155,8 @@ include 'include/dashboard_process.php'
 
         <!-- Contents of friend chats-->
           <!-- message show -->
-          <div id="msgTplContainer">
 
+          <div id="all_threads">
           </div>
 
 	  </div>
@@ -165,95 +172,11 @@ include 'include/dashboard_process.php'
 		</footer>
 
         <!-- msg template -->
-        <!--TODO:change corresponding part-->
-        <script id="msgTpl" type="text/html">
-            <% for (var i = 0; i < data.length; i++) {%>
-            <div class="message-container" data-mid="<%=data[i].mid%>">
-                <div class="message-box">
-                    <div class="msg-item msg-sender row">
-                        <div class="col-1 avatar">
-                            <%if (data[i].photo != null && data[i].photo != "") {%>
-                            <img src="uploads/<%=data[i].photo%>">
-                            <%} else {%>
-                            <img src="statics/common/img/test_avatar.jpg">
-                            <%} %>
-                        </div>
-                        <div class="col-11 sender-info">
-                            <span class="sender-name"><%=data[i].firstname%> <%=data[i].lastname%></span>
-                            <span class="sender-block"><%=data[i].block%></span>
-                        </div>
-                    </div>
-                    <div class="msg-item msg-title">
-                        <h5><%=data[i].title%></h5>
-                    </div>
-                    <div class="msg-item msg-content">
-                        <%=data[i].text_body%>
-                    </div>
-                    <div class="msg-item msg-img"></div>
-                    <div class="msg-item msg-time">
-                        <span><%=data[i].timestamp%></span>
-                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <%if (data[i].address) {%>
-                        <span><i class="fas fa-map-marker-alt"></i> <%=data[i].address%></span>
-                        <%}%>
-                    </div>
-                    <div class="msg-item msg-buttons">
-                        <button class="btn btn-no-border" id="writeReply">
-                            <i class="far fa-comment-alt"></i>
-                            <span>reply</span>
-                        </button>
-                        <button class="btn btn-no-border  float-right" id="showReplies">
-                            <i class="far fa-comment-dots"></i>
-                            <span>comment</span>
-                            <span class="reply-num"><%=data[i].reply.length%></span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="reply-box">
-                    <% for (var j = 0; j < data[i].reply.length; j++) {%>
-                    <div class="msg-item other-reply row">
-                        <div class="col-1 avatar">
-                            <%if (data[i].reply[j].photo != null && data[i].reply[j].photo != "") {%>
-                            <img src="uploads/<%=data[i].reply[j].photo%>">
-                            <%} else {%>
-                            <img src="statics/common/img/test_avatar.jpg">
-                            <%} %>
-                        </div>
-                        <div class="col-11 reply-content">
-                            <div class="reply-info">
-                                <div class="sender-info">
-                                    <span class="sender-name"><%=data[i].reply[j].firstname%> <%=data[i].reply[j].lastname%></span>
-                                    <span>, </span>
-                                    <span class="sender-block">436 Albee Square</span>
-                                </div>
-                                <div class="reply-body">
-                                    <%=data[i].reply[j].content%>
-                                </div>
-                                <div class="msg-item msg-time">
-                                    <span><%=data[i].reply[j].reply_timestamp%></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="col-1"></div> -->
-                    </div>
-                    <%}%>
-
-                    <div class="msg-item your-reply row">
-                        <div class="col-1 avatar my-avatar">
-                            <img src="statics/common/img/test_avatar.jpg">
-                        </div>
-                        <div class="col-11 reply-input">
-                            <textarea class="form-control reply-text" name="textBody" rows="2" placeholder="message body" required=""></textarea>
-                            <button class="btn btn-primary reply-btn float-right send-reply">Reply</button>
-                        </div>
-                        <!-- <div class="col-1"></div> -->
-                    </div>
-
-                </div>
-            </div>
-            <%}%>
-        </script>
+<!--        <srcipt id="msg_template" type = "text/html">-->
+<!--            <%for (var i = 0; i < data.length; ++i) {%>-->
+<!--            <%=i%>-->
+<!--            <%}%>-->
+<!--        </srcipt>-->
 
 	</div>
 	<!-- /.content-wrapper -->
@@ -284,6 +207,98 @@ include 'include/dashboard_process.php'
 	  </div>
 	</div>
   </div>
+  <script id="msg_template" type = "text/html">
+      <%for (var i = 0;i < data.length;++i) {%>
+      <div class = "message-container" data-mid="<%=data[i].thread_id%>">
+          <div class="message-box">
+              <div class="msg-item msg-sender row">
+                  <div class="col-1">
+                      <div class="avatar">
+                          <%if (data[i].msgs[0].photo_link != null && data[i].msgs[0].photo_link != "") {%>
+                          <img src="../<%=data[i].msgs[0].photo_link%>">
+                          <%} else {%>
+                          <img src="../pic/img_login_avatar.png">
+                          <%} %>
+                      </div>
+                  </div>
+                  <div class="col-11 sender-info">
+                    <span>
+                        <span class="sender-name"><%=data[i].msgs[0].unickname%></span>
+                    </span>
+                  </div>
+              </div>
+
+              <div class="msg-item msg-title">
+                  <h5><%=data[i].thread_name%></h5>
+              </div>
+
+              <div class="msg-item msg-content">
+                  <%=data[i].msgs[0].textbody%>
+              </div>
+
+              <div class="msg-item msg-time">
+                  <span><%=data[i].msgs[0].timestamp%></span>
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              </div>
+
+              <div class="msg-item msg-buttons">
+                  <button class="btn btn-no-border" id="writeReply">
+                      <i class="far fa-comment-alt"></i>
+                      <span>reply</span>
+                  </button>
+                  <button class="btn btn-no-border  float-right" id="showReplies">
+                      <i class="far fa-comment-dots"></i>
+                      <span>comment</span>
+                      <span class="reply-num"><%=data[i].msgs.length-1%></span>
+                  </button>
+              </div>
+
+              <div class="reply-box">
+                  <% for (var j = 1; j < data[i].msgs.length; j++) {%>
+                  <div class="msg-item other-reply row">
+                      <div class="col-1">
+                          <div class="avatar">
+                              <%if (data[i].msgs[j].photo_link != null && data[i].msgs[j].photo_link != "") {%>
+                              <img src="../<%=data[i].msgs[j].photo_link%>">
+                              <%} else {%>
+                              <img src="../pic/img_login_avatar.png">
+                              <%}%>
+                          </div>
+                      </div>
+                      <div class="col-11 reply-content">
+                          <div class="reply-info">
+                              <div class="sender-info">
+                                  <span class="sender-name"><%=data[i].msgs[j].unickname%></span>
+                              </div>
+                              <div class="reply-body">
+                                  <%=data[i].msgs[j].textbody%>
+                              </div>
+                              <div class="msg-item msg-time">
+                                  <span><%=data[i].msgs[j].timestamp%></span>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- <div class="col-1"></div> -->
+                  </div>
+                  <%}%>
+              </div>
+
+              <div class="msg-item your-reply row">
+                  <div class="col-1 my-avatar">
+                      <div class="avatar">
+                        <img src="../pic/img_login_avatar.png">
+                      </div>
+                  </div>
+                  <div class="col-11 reply-input">
+                      <textarea class="form-control reply-text" name="textBody" rows="2" placeholder="message body" required=""></textarea>
+                      <button class="btn btn-primary reply-btn float-right send-reply">Reply</button>
+                  </div>
+                  <!-- <div class="col-1"></div> -->
+              </div>
+          </div>
+      </div>
+      <%}%>
+  </script>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -304,8 +319,9 @@ include 'include/dashboard_process.php'
   <script src="js/demo/dashboard.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
   <script type="text/javascript" src="js/baiduTemplate.js"></script>
-  <script src="js/friend_threads.js"></script>
+  <script src="js/friendThreads.js"></script>
 
 </body>
 
-</php>
+</html>
+

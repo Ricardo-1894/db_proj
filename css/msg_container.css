@@ -75,7 +75,7 @@ body {
     color: rgb(103, 110, 122);
 }
 .message-container .msg-item.msg-buttons .btn {
-    color: #48bf84;
+    color: #007bff;
     padding-left: 0;
 }
 
@@ -124,7 +124,7 @@ body {
 
 #headProfile .card-header {
     height: 116px;
-    background-image: url(../common/img/profile_bg.JPG);
+    /*background-image: url(../common/img/profile_bg.JPG);*/
     background-position: center center;
     background-attachment: fixed;
     -webkit-background-size: cover;
@@ -211,7 +211,7 @@ span.noti-num {
     border: 0;
 }
 .edit-intro {
-    color: #48bf84!important;
+    color: #007bff!important;
 }
 
 #uploadAvatar {
@@ -223,4 +223,119 @@ span.noti-num {
 
 .pointer {
     cursor: pointer!important;
+}
+body {
+    background-color: #FFFFFF;
+    color: #4A5057
+}
+footer {
+    background-color: #040303;
+
+}
+footer a {
+    color: white;
+}
+
+.pointer {
+    cursor: pointer!important;
+}
+.navbar-light, .bg-light {
+    background-color: #FFFFFF!important;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.navbar-collapse {
+    margin-left: 100px;
+}
+
+.nav-item {
+    margin: 0 20px 0 20px;
+    cursor: pointer;
+}
+
+.side-item {
+    padding: 15px 15px 15px 30px;
+}
+
+.left-side-nav {
+    padding-right: 0px;
+}
+
+.card {
+    background: #F4F4F7!important;
+    border: 0px;
+}
+.card-header{
+    /*background: #FFFFFF;*/
+    border: 0px;
+}
+
+.btn {
+    font-size: 14px;
+}
+.btn-primary {
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0095ff;
+    border-color: #0095ff;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #EDF2EE;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+}
+
+.search-input {
+    width: 300px!important;
+}
+.right-side-nav {
+    height: 1000px;
+}
+
+.modal-body {
+    padding: 20px 20px 0 20px;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+#user-dropdown {
+    margin-top: 23px;
+    margin-left: -84px;
+    border-radius: 3px;
+}
+
+.hide {
+    display: none;
+}
+
+h4 {
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.no-margin-p {
+    margin-bottom: 0
+}
+
+.logo {
+    height: 43px;
+
+}
+
+footer {
+    margin-top: 20px;
+}
+
+.logo-row {
+    padding-top: 20px;
 }

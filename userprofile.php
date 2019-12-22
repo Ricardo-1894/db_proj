@@ -232,7 +232,7 @@ include 'include/dashboard_process.php'
   <script src="js/sb-admin.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-  <script src="js/userprofile.js"></script>
+  <script src="js/userProfile.js"></script>
 </body>
 
 </html>

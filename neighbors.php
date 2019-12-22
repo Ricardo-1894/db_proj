@@ -105,14 +105,15 @@ include 'include/index_process.php';
                 <span>Pages</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <h6 class="dropdown-header">Login Screens:</h6>
-                <a class="dropdown-item" href="index.php">Login</a>
-                <a class="dropdown-item" href="register.php">Register</a>
-                <a class="dropdown-item" href="forgot-password.php">Forgot Password</a>
+                <h6 class="dropdown-header">All Threads:</h6>
+                <a class="dropdown-item" href="friend_threads.php">Friends</a>
+                <a class="dropdown-item" href="#">Neighbors</a>
+                <a class="dropdown-item" href="#">Block</a>
+                <a class="dropdown-item" href="#">Hood</a>
                 <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Other Pages:</h6>
-                <a class="dropdown-item" href="404.php">404 Page</a>
-                <a class="dropdown-item" href="blank.php">Blank Page</a>
+                <h6 class="dropdown-header">Other Messages</h6>
+                <a class="dropdown-item" href="404.html">Friends Apply</a>
+                <a class="dropdown-item active" href="404.html">Block Apply</a>
             </div>
         </li>
         <li class="nav-item">
@@ -139,265 +140,14 @@ include 'include/index_process.php';
                 <li class="breadcrumb-item active">Neighbors</li>
             </ol>
 
-            <!-- DataTables Example -->
-            <div class="card mb-3">
-                <div class="card-header">
-                    <i class="fas fa-table"></i>
-                    Your Neighbors</div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Self Intro</th>
-                                <th>Family Intro</th>
-                                <th>Age</th>
-                                <th>Building</th>
-                                <th>Friend Apply</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>Hi, I'm Tiger.</td>
-                                <td>--</td>
-                                <td>19</td>
-                                <td>Avalon FG</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Garrett Winters</td>
-                                <td>I am an accountant</td>
-                                <td>--</td>
-                                <td>63</td>
-                                <td>Brooklyn Air</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Ashton Cox</td>
-                                <td>Want for some friends here</td>
-                                <td>--</td>
-                                <td>66</td>
-                                <td>Brooklyn Air</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Cedric Kelly</td>
-                                <td>I am senior Javascript Developer</td>
-                                <td>--</td>
-                                <td>22</td>
-                                <td>Avalon FG</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Airi Satou</td>
-                                <td>I am Airi.</td>
-                                <td>--</td>
-                                <td>33</td>
-                                <td>Avalon Dobro</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Brielle Williamson</td>
-                                <td>Integration Specialist</td>
-                                <td>Single</td>
-                                <td>61</td>
-                                <td>Avalon Dobro</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Herrod Chandler</td>
-                                <td>Sales Assistant</td>
-                                <td>Married</td>
-                                <td>59</td>
-                                <td>Brooklyn Air</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Rhona Davidson</td>
-                                <td>Cycling</td>
-                                <td>Nothing to say</td>
-                                <td>55</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Colleen Hurst</td>
-                                <td>Cycling</td>
-                                <td>Nothing to say</td>
-                                <td>25</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Sonya Frost</td>
-                                <td>Software Engineer</td>
-                                <td>Nothing here</td>
-                                <td>23</td>
-                                <td>Brooklyn Air</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Jena Gaines</td>
-                                <td>Software Engineer</td>
-                                <td>Nothing here</td>
-                                <td>23</td>
-                                <td>Brooklyn Air</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Quinn Flynn</td>
-                                <td>Swimming</td>
-                                <td>Nothing to say</td>
-                                <td>25</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Charde Marshall</td>
-                                <td>Swimming</td>
-                                <td>Nothing to say</td>
-                                <td>25</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Haley Kennedy</td>
-                                <td>Swimming</td>
-                                <td>Single</td>
-                                <td>25</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Tatyana Fitzpatrick</td>
-                                <td>Hi, I'm Tatyana.</td>
-                                <td>--</td>
-                                <td>19</td>
-                                <td>Avalon FG</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Michael Silva</td>
-                                <td>Hi, there.</td>
-                                <td>--</td>
-                                <td>29</td>
-                                <td>Avalon Dobro</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Paul Byrd</td>
-                                <td>Hi, there.</td>
-                                <td>--</td>
-                                <td>29</td>
-                                <td>Avalon Dobro</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Gloria Little</td>
-                                <td>Hi, there.</td>
-                                <td>--</td>
-                                <td>29</td>
-                                <td>Avalon Dobro</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Bradley Greer</td>
-                                <td>Software Engineer</td>
-                                <td>Single</td>
-                                <td>25</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Dai Rios</td>
-                                <td>Personnel Lead</td>
-                                <td>Married</td>
-                                <td>25</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Jenette Caldwell</td>
-                                <td>Development Lead</td>
-                                <td>Single</td>
-                                <td>25</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Yuri Berry</td>
-                                <td>Chief Marketing Officer (CMO)</td>
-                                <td>Single</td>
-                                <td>25</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Caesar Vance</td>
-                                <td>Pre-Sales Support</td>
-                                <td>Single</td>
-                                <td>25</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Doris Wilder</td>
-                                <td>Sales Assistant</td>
-                                <td>Single</td>
-                                <td>26</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Angelica Ramos</td>
-                                <td>Chief Executive Officer (CEO)</td>
-                                <td>Single</td>
-                                <td>25</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Gavin Joyce</td>
-                                <td>Cycling</td>
-                                <td>Nothing to say</td>
-                                <td>55</td>
-                                <td>The Eagle</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Jennifer Chang</td>
-                                <td>Swimming</td>
-                                <td>Nothing to say</td>
-                                <td>55</td>
-                                <td>Avalon FG</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Brenden Wagner</td>
-                                <td>Software Engineer</td>
-                                <td>My family is in San Francisco</td>
-                                <td>28</td>
-                                <td>Azura</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            <tr>
-                                <td>Suki Burks</td>
-                                <td>I am a solid Developer</td>
-                                <td>Married</td>
-                                <td>32</td>
-                                <td>Azura</td>
-                                <td>Apply Link</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-            </div>
+
 
         </div>
+
+        <!-- DataTables Example -->
+        <div id = 'neighbor_table'>
+        </div>
+
         <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->
@@ -455,8 +205,9 @@ include 'include/index_process.php';
 
 <!-- Demo scripts for this page-->
 <script src="js/demo/datatables-demo.js"></script>
+<script src="js/demo/dashboard.js"></script>
 
-<scrpit src="js/show_neighbors.js"></scrpit>
+<script src="js/showNeighbors.js"></script>
 
 </body>
 
