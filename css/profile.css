@@ -1,0 +1,39 @@
+#form {
+	margin-top: 140px;
+}
+
+.avatar-box {
+	margin-bottom: 30px;
+	position: absolute;
+}
+
+
+.avatar img {
+	/*position: relative;*/
+	width: 100px;
+	height: 100px;
+}
+
+.avatar-mask {
+	position: absolute;
+	top: 0;
+    left: 0;
+	width: 100px;
+	height: 100px;
+	background-color: #252323cf;
+	font-size: 30px;
+	color: #FFFFFF; 
+	opacity: 0;
+}
+
+.avatar-mask i {
+	line-height: 100px;
+}
+
+.avatar-box a:hover .avatar-mask {
+    opacity: 1;           
+}
+
+#uploadInput {
+	display: none;
+}

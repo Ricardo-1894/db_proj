@@ -25,6 +25,7 @@ include 'include/dashboard_process.php'
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="css/profile.css" rel="stylesheet" >
 
 </head>
 
@@ -142,6 +143,19 @@ include 'include/dashboard_process.php'
         <!-- Page Content -->
         <h1>My Profile</h1>
         <hr>
+
+        <!-- z-h-p -->
+        <div class="avatar-box">
+            <div class="avatar">
+                <img src="pic/img_login_avatar.png">
+            </div>
+            <a href="#" id="uploadAvatar">
+              <div class="avatar-mask text-center">
+                  <i class="fas fa-camera-retro"></i>
+              </div>
+            </a>
+            <input type="file" id="uploadInput" name="avatar">
+        </div>
 
         <form class="foo" id = "form">
           <div class="form-group">
