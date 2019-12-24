@@ -130,9 +130,9 @@ include 'include/dashboard_process.php'
 			</div>
 		</li>
 	  <li class="nav-item">
-		<a class="nav-link" href="charts.php">
+		<a class="nav-link" href="friends.php">
 		  <i class="fas fa-fw fa-chart-area"></i>
-		  <span>Charts</span></a>
+		  <span>Friends</span></a>
 	  </li>
 	  <li class="nav-item">
 		<a class="nav-link" href="neighbors.php">
