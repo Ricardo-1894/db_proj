@@ -3,11 +3,10 @@
  * @author     (Haopeng Zhao <hz2151@nyu.edu>)
  * fetch all friends' or all neighbors' threads
  */
-//session_start();
+session_start();
 include 'dbh.inc.php';
 
-//$user_id = $_SESSION['username'];
-$user_id = 123;
+$user_id = $_SESSION['username'];
 
 if(isset($_POST['action']) && !empty($_POST['action'])) {
     $action = $_POST['action'];
@@ -18,6 +17,12 @@ if(isset($_POST['action']) && !empty($_POST['action'])) {
             break;
         case "fetch_neighbor":
             echo fetch_all_kind($user_id, "1");
+            break;
+        case "fetch_block":
+            echo fetch_all_kind($user_id, "2");
+            break;
+        case "fetch_hood":
+            echo fetch_all_kind($user_id, "3");
             break;
         default:
             return "";
@@ -37,7 +42,7 @@ function fetch_all_kind($user_id, $thread_type){
        "select t.thread_id, t.thread_name, m.msg_id, m.author, up.unickname, up.photo_link, m.timestamp, m.textbody
             from thread_users tu, thread t, thread_msgs tm, msg m, user_profile up
             where tu.uid = ? and thread_type = ? and tu.thread_id = t.thread_id and t.thread_id = tm.thread_id and tm.msg_id = m.msg_id and author = up.uid
-            order by t.thread_id";
+            order by t.thread_id, m.timestamp";
     $fetch_thread_msg_stmt = mysqli_stmt_init($conn);
 
     if(mysqli_stmt_prepare($fetch_thread_msg_stmt, $fetch_thread_msg_sql)){

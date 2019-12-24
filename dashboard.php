@@ -1,4 +1,9 @@
 <?php
+/**
+ * @author     (Haopeng Zhao <hz2151@nyu.edu>)
+ * main page
+ */
+
 session_start();
 include 'include/index_process.php';
 include 'include/dashboard_process.php'
@@ -110,20 +115,20 @@ include 'include/dashboard_process.php'
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header">All Threads:</h6>
-                <a class="dropdown-item" href="friend_threads.php">Friends</a>
-                <a class="dropdown-item" href="#">Neighbors</a>
-                <a class="dropdown-item" href="#">Block</a>
-                <a class="dropdown-item" href="#">Hood</a>
+                <a class="dropdown-item" href="threads.php?type=0">Friends</a>
+                <a class="dropdown-item" href="threads.php?type=1">Neighbors</a>
+                <a class="dropdown-item" href="threads.php?type=2">Block</a>
+                <a class="dropdown-item" href="threads.php?type=3">Hood</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Other Messages</h6>
-                <a class="dropdown-item" href="404.html">Friends Apply</a>
-                <a class="dropdown-item active" href="404.html">Block Apply</a>
+                <a class="dropdown-item" href="friendapply.php">Friends Apply</a>
+                <a class="dropdown-item active" href="blockapply.php">Block Apply</a>
             </div>
         </li>
       <li class="nav-item">
-        <a class="nav-link" href="charts.php">
+        <a class="nav-link" href="friends.php">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
+          <span>Friends</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="neighbors.php">
@@ -154,7 +159,7 @@ include 'include/dashboard_process.php'
                 </div>
                 <div class="mr-5"><?php unread_f_msg_count(); ?></div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="friend_threads.php">
+              <a class="card-footer text-white clearfix small z-1" href="threads.php?type=0">
                 <span class="float-left">View friends' feed</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -170,7 +175,7 @@ include 'include/dashboard_process.php'
                 </div>
                 <div class="mr-5"><?php unread_n_msg_count(); ?></div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
+              <a class="card-footer text-white clearfix small z-1" href="threads.php?type=1">
                 <span class="float-left">View neighbors' feed</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -186,7 +191,7 @@ include 'include/dashboard_process.php'
                 </div>
                 <div class="mr-5"><?php unread_b_msg_count(); ?></div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
+              <a class="card-footer text-white clearfix small z-1" href="threads.php?type=2">
                 <span class="float-left">View blocks' feed</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -202,7 +207,7 @@ include 'include/dashboard_process.php'
                 </div>
                 <div class="mr-5"><?php unread_h_msg_count(); ?></div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
+              <a class="card-footer text-white clearfix small z-1" href="threads.php?type=3">
                 <span class="float-left">View hoods' feed</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -256,10 +261,9 @@ include 'include/dashboard_process.php'
         </script>
         <script async defer
 
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYKmQLLzSPnRViDDC3iimnrOcQt9kruzs&callback=initMap">
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNvaDWM1DzVdzd10CjNBTiL50-R4ZSxcI&callback=initMap">
         </script>
 
-<!--          AIzaSyBYKmQLLzSPnRViDDC3iimnrOcQt9kruzs-->
       </div>
       <!-- /.container-fluid -->
 

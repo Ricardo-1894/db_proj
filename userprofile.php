@@ -109,10 +109,10 @@ include 'include/dashboard_process.php'
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">All Threads:</h6>
-          <a class="dropdown-item" href="#">Friends</a>
-          <a class="dropdown-item" href="#">Neighbors</a>
-          <a class="dropdown-item" href="#">Block</a>
-          <a class="dropdown-item" href="#">Hood</a>
+          <a class="dropdown-item" href="threads.php?type=0">Friends</a>
+          <a class="dropdown-item" href="threads.php?type=1">Neighbors</a>
+          <a class="dropdown-item" href="threads.php?type=2">Block</a>
+          <a class="dropdown-item" href="threads.php?type=0">Hood</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Other Messages</h6>
           <a class="dropdown-item" href="404.html">Friends Apply</a>

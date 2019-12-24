@@ -1,3 +1,7 @@
+/**
+ * @author     (Haopeng Zhao <hz2151@nyu.edu>)
+ */
+
 jQuery.noConflict();
 (
     function($) {

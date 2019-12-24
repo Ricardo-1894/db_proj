@@ -1,37 +1,35 @@
 /**
  * @author     (Haopeng Zhao <hz2151@nyu.edu>)
- * Show the list of all your neighbors
  */
 
-//jQuery.noConflict();
+jQuery.noConflict();
 
 (function($) {
     const url = {
-        fetch_neighbors: 'include/neighbor_process',
-        send_request: ''
+        fetch_request: 'include/application_process.php',
+        delete_request: 'include/application_process.php'
     };
 
-    var show_neighbors_page = {
+    var show_friend_apply_page = {
         init: function(){
-            this.fetchNeighbors(url.fetch_neighbors);
+            this.fetchRequests(url.fetch_request);
             this.bind();
         },
 
         bind: function() {
-            this.send_add_friend_request(url.send_request);
+            this.send_agree_friend_request(url.delete_request);
         },
 
-        fetchNeighbors: function(fetch_neighbors_url) {
+        fetchRequests: function(fetch_request_url) {
             $.ajax({
-                    url: fetch_neighbors_url,
+                    url: fetch_request_url,
                     method: 'POST',
                     data: {
-                        action: 'fetch'
+                        action: 'fetch_friend_request'
                     },
                     success: function (res) {
                         res = JSON.parse(res);
-                        //$('#neighbor_table').innerHTML = show_neighbors_page.generate_neighbor_table(res);
-                        document.getElementById('neighbor_table').innerHTML = show_neighbors_page.generate_neighbor_table(res);
+                        document.getElementById('friend_apply_table').innerHTML = show_friend_apply_page.generate_request_table(res);
                         $('#zhaohaopeng').DataTable();
                     },
                     error: function(){
@@ -41,7 +39,7 @@
             );
         },
 
-        generate_neighbor_table: function(json_data) {
+        generate_request_table: function(json_data) {
             const table_header_neighbor = "<div class=\"card mb-3\">\n" +
                 "          <div class=\"card-header\">\n" +
                 "            <i class=\"fas fa-table\"></i>\n" +
@@ -65,11 +63,12 @@
             var table_total = table_header_neighbor;
 
             for(var i = 0; i < json_data["length"]; ++i) {
-                var table_row = "                  <tr role=\"row\" class=\"odd\">\n" +
+                var table_row =
+                    "                  <tr role=\"row\" class=\"odd\">\n" +
                     "                    <td class=\"sorting_1\">"+ json_data[i]["uid"] +"</td>\n" +
                     "                    <td>"+json_data[i]["unickname"]+"</td>\n" +
                     "                    <td>"+json_data[i]["block_name"]+"</td>\n" +
-                    "                    <td><button type=\"button\" class=\"btn btn-primary\">Add</button></td>\n" +
+                    "                    <td><button type=\"button\" class=\"btn btn-primary\" data-mid = "+json_data[i]["uid"]+ ">Accept</button></td>\n" +
                     "                   </tr>";
                 table_total += table_row;
             }
@@ -78,13 +77,32 @@
             return table_total;
         },
 
-        send_add_friend_request(send_request_url) {
-            //pass
+        send_agree_friend_request(send_request_url) {
+            var me = this;
+            $('#friend_apply_table').delegate('.btn-primary', 'click', function(){
+                var target_id = $(this).data('mid');                 //should this 'this' need to use be me?
+                $.ajax({
+                    url: send_request_url,
+                    method: 'POST',
+                    data:{
+                        action: 'agree_friend',
+                        target_id: target_id
+                    },
+                    success: function() {
+                        // res = JSON.parse(res);
+                        alert('You are friends! Let\'s talk!');
+                        me.fetchRequests(url.fetch_request);
+                    },
+                    error: function() {
+                        alert('HTTP request fail, internal error!');
+                    }
+                });
+            });
         }
     };
 
     $(function() {
-            show_neighbors_page.init();
+            show_friend_apply_page.init();
         }
     );
 })(window.jQuery);

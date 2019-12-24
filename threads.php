@@ -1,7 +1,7 @@
 <?php
 /**
  * @author     (Haopeng Zhao <hz2151@nyu.edu>)
- * front end for all friends' threads
+ * front end for all kinds of threads
  */
 session_start();
 include 'include/index_process.php';
@@ -119,14 +119,14 @@ include 'include/dashboard_process.php'
 			</a>
 			<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 				<h6 class="dropdown-header">All Threads:</h6>
-				<a class="dropdown-item" href="friend_threads.php">Friends</a>
-				<a class="dropdown-item" href="#">Neighbors</a>
-				<a class="dropdown-item" href="#">Block</a>
-				<a class="dropdown-item" href="#">Hood</a>
+				<a class="dropdown-item" href="threads.php?type=0">Friends</a>
+				<a class="dropdown-item" href="threads.php?type=1">Neighbors</a>
+				<a class="dropdown-item" href="threads.php?type=2">Block</a>
+				<a class="dropdown-item" href="threads.php?type=3">Hood</a>
 				<div class="dropdown-divider"></div>
 				<h6 class="dropdown-header">Other Messages</h6>
-				<a class="dropdown-item" href="404.html">Friends Apply</a>
-				<a class="dropdown-item active" href="404.html">Block Apply</a>
+				<a class="dropdown-item" href="friendapply.php">Friends Apply</a>
+				<a class="dropdown-item active" href="blockapply.php">Block Apply</a>
 			</div>
 		</li>
 	  <li class="nav-item">
@@ -150,7 +150,7 @@ include 'include/dashboard_process.php'
 		  <li class="breadcrumb-item">
 			<a href="#">Pages</a>
 		  </li>
-		  <li class="breadcrumb-item active">Friends</li>
+		  <li class="breadcrumb-item active" id = "content_name"></li>
 		</ol>
 
         <!-- Contents of friend chats-->
@@ -319,7 +319,8 @@ include 'include/dashboard_process.php'
   <script src="js/demo/dashboard.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
   <script type="text/javascript" src="js/baiduTemplate.js"></script>
-  <script src="js/friendThreads.js"></script>
+  <script src="js/threads.js"></script>
+  <script src="js/search.js"></script>
 
 </body>
 

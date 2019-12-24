@@ -1,7 +1,7 @@
 <?php
 /**
  * @author     (Haopeng Zhao <hz2151@nyu.edu>)
- * front end for showing all neighbors
+ * front end for showing all friends
  */
 
 session_start();
@@ -144,7 +144,7 @@ include 'include/index_process.php';
                 <li class="breadcrumb-item">
                     <a href="dashboard.php">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Neighbors</li>
+                <li class="breadcrumb-item active">Friends</li>
             </ol>
 
 
@@ -152,7 +152,7 @@ include 'include/index_process.php';
         </div>
 
         <!-- DataTables Example -->
-        <div id = 'neighbor_table'>
+        <div id = 'friend_table'>
         </div>
 
         <!-- /.container-fluid -->
@@ -214,7 +214,7 @@ include 'include/index_process.php';
 <script src="js/demo/datatables-demo.js"></script>
 <script src="js/demo/dashboard.js"></script>
 
-<script src="js/neighbors.js"></script>
+<script src="js/friends.js"></script>
 <script src="js/search.js"></script>
 
 </body>

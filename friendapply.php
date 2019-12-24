@@ -136,7 +136,6 @@ include 'include/index_process.php';
     </ul>
 
     <div id="content-wrapper">
-
         <div class="container-fluid">
 
             <!-- Breadcrumbs-->
@@ -144,15 +143,13 @@ include 'include/index_process.php';
                 <li class="breadcrumb-item">
                     <a href="dashboard.php">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Neighbors</li>
+                <li class="breadcrumb-item active">FriendsApply</li>
             </ol>
-
-
 
         </div>
 
         <!-- DataTables Example -->
-        <div id = 'neighbor_table'>
+        <div id = 'friend_apply_table'>
         </div>
 
         <!-- /.container-fluid -->
@@ -215,7 +212,7 @@ include 'include/index_process.php';
 <script src="js/demo/dashboard.js"></script>
 
 <script src="js/neighbors.js"></script>
-<script src="js/search.js"></script>
+<script src="js/friend_apply.js"></script>
 
 </body>
 

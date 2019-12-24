@@ -119,8 +119,8 @@ include 'include/index_process.php';
                 <a class="dropdown-item" href="threads.php?type=3">Hood</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Other Messages</h6>
-                <a class="dropdown-item" href="friendapply.php">Friends Apply</a>
-                <a class="dropdown-item active" href="blockapply.php">Block Apply</a>
+                <a class="dropdown-item" href="404.html">Friends Apply</a>
+                <a class="dropdown-item active" href="404.html">Block Apply</a>
             </div>
         </li>
         <li class="nav-item">
