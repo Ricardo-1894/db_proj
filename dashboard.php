@@ -261,7 +261,7 @@ include 'include/dashboard_process.php'
         </script>
         <script async defer
 
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNvaDWM1DzVdzd10CjNBTiL50-R4ZSxcI&callback=initMap">
+          src="https://maps.googleapis.com/maps/api/js?key=initMap">
         </script>
 
       </div>
